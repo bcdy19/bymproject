@@ -1,0 +1,39 @@
+<%- include('_header.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+</head>
+<body>
+    <section class="col-xs-12"></section>
+    
+      <form action="/main" method="post">
+        <input type="text" name="ex" class="form-control" placeholder="기록">
+        <input type="submit" class="btn btn-primary btn-block" value="결과 기록">
+    </form>
+    <br>
+    </section>
+    <div>
+      <table class="table table-hover" style="margin-left: auto; margin-right: auto;">
+          <thead class="thead-dark">
+              <tr>
+                  <th scope="col">Time</th>
+                  <th scope="col">Exercise</th>
+              </tr>
+          </thead>
+          <tbody>
+              <% for(var i=0; i<result.length; i++) { %>
+              <tr>
+                  
+                  <td><%=result[i].createAt %></td>
+                  <td><%=result[i].ex %></td>
+              </tr>
+              <% } %>
+          </tbody>
+      </table>
+  </div>
+</body>
+</html>
+<%- include('_footer.ejs') %>

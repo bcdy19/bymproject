@@ -1,0 +1,27 @@
+<%- include('_header.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+</head>
+<body>
+    <section class="col-xs-12"></section>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h2>Welcome <%= username %></h2>
+        </div>
+      </div>
+      <form action="/main" method="post">
+        <input type="text" name="ex" class="form-control" placeholder="기록">
+        <input type="submit" class="btn btn-primary btn-block" value="결과 기록">
+    </form>
+    <form action="/output" method="get">
+      <input type="submit" class="btn btn-primary btn-block" value="결과 조회">
+  </form>
+    </section>
+    
+</body>
+</html>
+<%- include('_footer.ejs') %>
